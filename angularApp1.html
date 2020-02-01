@@ -1,0 +1,37 @@
+<html >
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<style>
+			#img1{width:500px; text-align:center;font-family:ariel; font-weight:bold; color:#f50000; border-color:#0000f5;}
+			.class_for_align{margin-left:380px; height:60px; font-size:50;}
+			#nation{font-size:40px;color:grey;}
+			#span1{height:50px;font-size:45px;background-color:white;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="controltheview" ng-app="FirstApp">
+		<input ng-mouseover="funct()" ng-mouseout="diamond()" id="img1" class="class_for_align" type="text" 
+		ng-model="boundinput" />	
+		<p class="class_for_align">{{boundinput}}</p>
+		<p id="nation">{{well}}</p>
+		<button id="span1" ng-click="make()" >Make him smile</button>
+		<div><img id="img1" ng-src="{{cron}}.jpeg" /></div>
+		</div>
+		<script >
+			var app=angular.module("FirstApp",[]);
+			app.controller("controltheview",function($scope){
+				$scope.make=function(){
+					$scope.cron="smile";
+				};
+				$scope.boundinput="Type something";
+				$scope.cron="makoo";
+				$scope.funct=function(){
+					$scope.well="Keep Going";
+				};
+				$scope.diamond=function(){
+					$scope.well="Thanks for seeing bro!!";
+				};
+			});
+		</script>
+	</body>
+</html>
